@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pastel Tasks — Todo App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Pastel Tasks home">
+        <span class="brand-mark">✦</span>
+        <span>pastel<span class="brand-light">tasks</span></span>
+      </a>
+      <span class="today" id="todayLabel"></span>
+    </header>
+
+    <section class="hero">
+      <div>
+        <p class="eyebrow">A LITTLE PROGRESS, EVERY DAY</p>
+        <h1>Make room for<br><span>what matters.</span></h1>
+        <p class="subtitle">A calm space for your thoughts, plans, and to-dos.</p>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="art-circle circle-one"></div>
+        <div class="art-circle circle-two"></div>
+        <div class="art-note"><span>✧</span><i></i><i></i><i></i></div>
+        <div class="art-sparkle">✳</div>
+      </div>
+    </section>
+
+    <section class="todo-card">
+      <div class="card-heading">
+        <div>
+          <p class="eyebrow">YOUR WORKSPACE</p>
+          <h2>Today’s tasks <span class="task-count" id="taskCount">0</span></h2>
+        </div>
+        <div class="progress-wrap">
+          <span id="progressText">0% complete</span>
+          <div class="progress-track"><div class="progress-bar" id="progressBar"></div></div>
+        </div>
+      </div>
+
+      <form class="add-form" id="todoForm">
+        <label class="sr-only" for="todoInput">Add a task</label>
+        <span class="input-plus">＋</span>
+        <input id="todoInput" type="text" placeholder="What needs to get done?" maxlength="120" autocomplete="off" />
+        <button type="submit" class="add-button">Add task <span>↗</span></button>
+      </form>
+
+      <div class="filters" role="tablist" aria-label="Filter tasks">
+        <button class="filter active" data-filter="all" type="button">All <span id="allCount">0</span></button>
+        <button class="filter" data-filter="active" type="button">In progress <span id="activeCount">0</span></button>
+        <button class="filter" data-filter="completed" type="button">Completed <span id="completedCount">0</span></button>
+      </div>
+
+      <ul class="todo-list" id="todoList" aria-live="polite"></ul>
+      <div class="empty-state" id="emptyState">
+        <div class="empty-icon">✧</div>
+        <h3>Nothing on your list yet</h3>
+        <p>Add a task above and make today count.</p>
+      </div>
+
+      <footer class="card-footer">
+        <span id="remainingText">You have a fresh start.</span>
+        <button class="clear-button" id="clearCompleted" type="button">Clear completed</button>
+      </footer>
+    </section>
+
+    <p class="bottom-note">Made for focused days <span>♡</span></p>
+  </main>
+
+  <div class="toast" id="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>
